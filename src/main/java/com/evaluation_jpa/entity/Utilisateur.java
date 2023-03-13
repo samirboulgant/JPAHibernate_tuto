@@ -12,13 +12,13 @@ public class Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_utilisateur;
+    private long id;
     @Column(nullable = false)
     private String nom;
     @Column(nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "utilisateur")
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     List<Projet> projets;
 
 }

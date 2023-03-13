@@ -8,7 +8,7 @@ import lombok.Data;
 public class Tache {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_tache;
+    private long id;
     @Column(nullable = false)
     private String titre;
     @Column(nullable = false)
@@ -17,4 +17,13 @@ public class Tache {
     @ManyToOne
     @JoinColumn(name = "id_projet")
     Projet projet;
+
+    public Tache(String titre, String description) {
+        this.titre = titre;
+        this.description = description;
+    }
+
+    public Tache() {
+
+    }
 }
