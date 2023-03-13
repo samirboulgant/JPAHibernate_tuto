@@ -14,7 +14,6 @@ public class Tache {
     @Column(nullable = false)
     private String description;
 
-    // un lien vers le proet parent
     @ManyToOne
     @JoinColumn(name = "id_projet")
     Projet projet;
