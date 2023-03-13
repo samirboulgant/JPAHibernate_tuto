@@ -15,19 +15,18 @@ import java.util.List;
 @Repository
 public interface ProjetRepository extends JpaRepository<Projet,Long> {
     @Query(value ="select * from projet order by id asc" ,nativeQuery = true)
-    List<Projet> Chercher();
+    List<Projet> chercher();
 
     @Override
     List<Projet> findAll();
 
-    List<Projet> findProjetByTitreOrderByIdAsc(String name);
+    List<Projet> findProjetByTitreOrderByIdAsc(String titre);
 
     @Modifying
     @Transactional
     void saveWithUtilisateur(@Param("titre") String titre,
                              @Param("description") String description,
                              @Param("id") long id);
-
 
 
 }

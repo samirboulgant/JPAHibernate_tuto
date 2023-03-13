@@ -12,5 +12,5 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur,Long> {
 
     @Query(value ="select * from Utilisateur order by id asc" ,nativeQuery = true)
     List<Utilisateur> Chercher();
-    List<Utilisateur> findUtilisateurByNomOrderByIdAsc(String name);
+    List<Utilisateur> findUtilisateurByNomOrderByIdAsc(String nom);
 }

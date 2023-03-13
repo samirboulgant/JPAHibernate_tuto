@@ -14,8 +14,9 @@ public interface TacheRepository extends JpaRepository<Tache,Long> {
     // chercher()
     @Query(value ="select * from tache order by id asc" ,nativeQuery = true)
     List<Tache> Chercher();
-    //
     List<Tache> findTacheByTitreOrderByIdAsc(String name);
+
+
     void deleteTachesByProjetId(long id);
 
     @Query(value = "delete from tache where id_projet :idprojet",nativeQuery = true)
